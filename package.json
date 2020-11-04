@@ -1,0 +1,19 @@
+{
+  "name": "gs-node-martian-robot",
+  "version": "1.0.0",
+  "description": "Guidesmith node assessment",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alvaroserrrano/GS-Node-Martian-Robot.git"
+  },
+  "author": "Alvaro Serrano Rivas",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alvaroserrrano/GS-Node-Martian-Robot/issues"
+  },
+  "homepage": "https://github.com/alvaroserrrano/GS-Node-Martian-Robot#readme"
+}
