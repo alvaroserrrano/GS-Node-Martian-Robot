@@ -28,38 +28,36 @@
   </p>
 </p>
 
-
-
 <!-- TABLE OF CONTENTS -->
+
 ## Table of Contents
 
-* [About the Project](#about-the-project)
-  * [Built With](#built-with)
-* [Getting Started](#getting-started)
-  * [Prerequisites](#prerequisites)
-  * [Installation](#installation)
-* [Usage](#usage)
-* [Roadmap](#roadmap)
-* [Contributing](#contributing)
-* [License](#license)
-* [Contact](#contact)
-* [Acknowledgements](#acknowledgements)
-
-
+- [About the Project](#about-the-project)
+  - [Built With](#built-with)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+- [Usage](#usage)
+- [Roadmap](#roadmap)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
+- [Acknowledgements](#acknowledgements)
 
 <!-- ABOUT THE PROJECT -->
+
 ## About The Project
 
 <!-- [![Product Name Screen Shot][product-screenshot]](https://example.com) -->
 
 ### Built With
 
-* [NodeJS](https://nodejs.org/en/)
-* [Javascript]()
-* []()
-
+- [NodeJS](https://nodejs.org/en/)
+- [Javascript]()
+- []()
 
 <!-- GETTING STARTED -->
+
 ## Getting Started
 
 To get a local copy up and running follow these simple steps.
@@ -67,38 +65,53 @@ To get a local copy up and running follow these simple steps.
 ### Prerequisites
 
 This is an example of how to list things you need to use the software and how to install them.
-* npm
+
+- npm
+
 ```sh
 npm install npm@latest -g
 ```
 
-* [Docker](https://docs.docker.com/install/)
+- [Docker](https://docs.docker.com/install/)
 
 ### Installation
 
 1. Clone the repo
+
 ```sh
 git clone https://github.com/alvaroserrrano/GS-MartianRobots.git
 ```
+
 2. Install NPM packages
+
 ```sh
 npm install
 ```
 
 ## Docker
+
 ### Build image
+
 ```
-$ docker build -t martian-robots .
+$ docker build -t aserranorivas/martian-robots .
 ```
 
 ### Run container
+
 ```
-$ docker run -i martian-robots < INSTRUCTIONS_PATH
+$ docker run -p 49160:8080 -d  aserranorivas/martian-robots
 ```
 
+### Test the app
+
+```
+curl -i localhost:49160
+```
 
 <!-- THE PROBLEM -->
+
 ## The problem
+
 The surface of Mars can be modelled by a rectangular grid around which robots are
 able to move according to instructions provided from Earth. You are to write a program
 that determines each sequence of robot positions and reports the final position of the
@@ -108,10 +121,11 @@ A robot position consists of a grid coordinate (a pair of integers: x-coordinate
 by y-coordinate) and an orientation (N, S, E, W for north, south, east, and west). A robot
 instruction is a string of the letters "L", "R", and "F" which represent, respectively, the
 instructions:
-* Left: the robot turns left 90 degrees and remains on the current grid point.
-* Right: the robot turns right 90 degrees and remains on the current grid point.
-* Forward: the robot moves forward one grid point in the direction of the current
-orientation and maintains the same orientation.
+
+- Left: the robot turns left 90 degrees and remains on the current grid point.
+- Right: the robot turns right 90 degrees and remains on the current grid point.
+- Forward: the robot moves forward one grid point in the direction of the current
+  orientation and maintains the same orientation.
 
 The direction North corresponds to the direction from grid point (x, y) to grid point (x,
 y+1).
@@ -125,7 +139,9 @@ instruction to move "off" the world from a grid point from which a robot has bee
 previously lost is simply ignored by the current robot.
 
 <!-- INPUT-->
+
 ## Input
+
 The first line of input is the upper-right coordinates of the rectangular world, the
 lower-left coordinates are assumed to be 0, 0.
 The remaining input consists of a sequence of robot positions and instructions (two lines
@@ -138,12 +154,15 @@ The maximum value for any coordinate is 50.
 All instruction strings will be less than 100 characters in length.
 
 <!--OUTPUT-->
+
 ## Output
+
 For each robot position/instruction in the input, the output should indicate the final grid
 position and orientation of the robot. If a robot falls off the edge of the grid the word
 "LOST" should be printed after the position and orientation.
 
-```
+````
+
 Sample input
 5 3
 1 1 E
@@ -157,22 +176,21 @@ Sample output
 1 1 E
 3 3 N LOST
 2 3 S
+
 ```
 
 <!-- Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources. -->
 
 <!-- _For more examples, please refer to the [Documentation](https://example.com)_ -->
 
-
-
 <!-- ROADMAP -->
+
 ## Roadmap
 
 See the [open issues](https://github.com/alvaroserrrano/GS-MartianRobots/issues) for a list of proposed features (and known issues).
 
-
-
 <!-- CONTRIBUTING -->
+
 ## Contributing
 
 Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
@@ -183,16 +201,14 @@ Contributions are what make the open source community such an amazing place to b
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-
-
 <!-- LICENSE -->
+
 ## License
 
 Distributed under the MIT License. See `LICENSE` for more information.
 
-
-
 <!-- CONTACT -->
+
 ## Contact
 
 Your Name - [@alvaro-serrano-rivas](https://linkedin.com/alvaro-serrano-rivas) - alvaro.serrano@wmich.edu
@@ -200,17 +216,18 @@ Your Name - [@alvaro-serrano-rivas](https://linkedin.com/alvaro-serrano-rivas) -
 Project Link: [https://github.com/alvaroserrrano/GS-MartianRobots](https://github.com/alvaroserrrano/GS-MartianRobots)
 
 <!-- ACKNOWLEDGEMENTS -->
+
 ## Acknowledgements
 
-* [GitHub Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet)
-* [Img Shields](https://shields.io)
-* [Choose an Open Source License](https://choosealicense.com)
-* [GitHub Pages](https://pages.github.com)
-* [Font Awesome](https://fontawesome.com)
-
+- [GitHub Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet)
+- [Img Shields](https://shields.io)
+- [Choose an Open Source License](https://choosealicense.com)
+- [GitHub Pages](https://pages.github.com)
+- [Font Awesome](https://fontawesome.com)
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+
 [contributors-shield]: https://img.shields.io/github/contributors/alvaroserrrano/repo.svg?style=flat-square
 [contributors-url]: https://github.com/alvaroserrrano/repo/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/alvaroserrrano/repo.svg?style=flat-square
@@ -224,3 +241,5 @@ Project Link: [https://github.com/alvaroserrrano/GS-MartianRobots](https://githu
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/alvaroserrano
 [product-screenshot]: images/screenshot.png
+```
+````
