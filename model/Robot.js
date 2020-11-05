@@ -7,3 +7,5 @@ class Robot {
     this.isDeath = false;
   }
 }
+
+exports.Robot = Robot;

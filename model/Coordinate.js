@@ -5,3 +5,5 @@ class Coordinate {
     this.scent = false;
   }
 }
+
+exports.Coordinate = Coordinate;
