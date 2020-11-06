@@ -1,4 +1,4 @@
-let Coordinate = require('./Coordinate');
+let { Coordinate } = require('./Coordinate');
 
 class Planet {
   constructor(rows, cols) {
@@ -14,7 +14,7 @@ class Planet {
       for (col = 0; col < this.cols; col++) {
         rows.push(new Coordinate(row, col));
       }
-      this.surface.push(row);
+      this.surface.push(rows);
     }
   };
   isValidCoordinate(row, col) {

@@ -4,8 +4,8 @@
 class InstructionFactory {
   constructor() {}
   static getDirective(directive, parentDirective) {
-    if (directive == null || directive == undefined) {
-      throw 'Invalid directive';
+    if (directive == undefined) {
+      console.error('Invalid directive');
     }
     switch (directive) {
       case 'R':
@@ -36,13 +36,18 @@ class MoveRightInstruction extends Instruction {
     this.rightMoves = ['N', 'E', 'S', 'W'];
   }
   execute(planet) {
-    this.parentDirective.orientation = this.rightMoves[
-      (this.rightMoves.indexOf(this.parentDirective) + 1) % 4
-    ];
-    response = {
-      status: 'success',
-    };
-    return response;
+    if (this.parentDirective.orientation === 'N') {
+      this.parentDirective.orientation = 'E';
+    } else if (this.parentDirective.orientation === 'E') {
+      this.parentDirective.orientation = 'S';
+    } else if (this.parentDirective.orientation === 'S') {
+      this.parentDirective.orientation = 'W';
+    } else if (this.parentDirective.orientation === 'W') {
+      this.parentDirective.orientation = 'N';
+    } else {
+      console.error('Invalid orientation');
+    }
+    return { status: 'success' };
   }
 }
 
@@ -52,9 +57,18 @@ class MoveLeftInstruction extends Instruction {
     this.leftMoves = ['N', 'W', 'S', 'E'];
   }
   execute(planet) {
-    this.parentDirective.orientation = this.leftMoves[
-      (this.leftMoves.indexOf(this.parentDirective) + 1) % 4
-    ];
+    if (this.parentDirective.orientation === 'N') {
+      this.parentDirective.orientation = 'W';
+    } else if (this.parentDirective.orientation === 'W') {
+      this.parentDirective.orientation = 'S';
+    } else if (this.parentDirective.orientation === 'S') {
+      this.parentDirective.orientation = 'E';
+    } else if (this.parentDirective.orientation === 'E') {
+      this.parentDirective.orientation = 'N';
+    } else {
+      console.error('Invalid orientation');
+    }
+
     return { status: 'success' };
   }
 }
@@ -68,9 +82,9 @@ class MoveForwardInstruction extends Instruction {
       this.parentDirective.orientation,
       planet
     );
-    if (isValidMove) {
+    if (isValidMove == true) {
       this.moveForward(this.parentDirective.orientation);
-      return { status: 'sucess' };
+      return { status: 'success' };
     } else {
       if (
         planet.getPosition(this.parentDirective.row, this.parentDirective.col)
@@ -86,39 +100,36 @@ class MoveForwardInstruction extends Instruction {
     }
   }
   moveForward(orientation) {
-    switch (orientation) {
-      case 'N':
-        this.parentDirective.row = this.parentDirective.row + 1;
-      case 'S':
-        this.parentDirective.row = this.parentDirective.row - 1;
-      case 'W':
-        this.parentDirective.col = this.parentDirective.col - 1;
-      case 'E':
-        this.parentDirective.col = this.parentDirective.col + 1;
+    if (orientation === 'N') {
+      this.parentDirective.row = this.parentDirective.row + 1;
+    } else if (orientation === 'W') {
+      this.parentDirective.col = this.parentDirective.col - 1;
+    } else if (orientation === 'S') {
+      this.parentDirective.row = this.parentDirective.row - 1;
+    } else if (orientation === 'E') {
+      this.parentDirective.col = this.parentDirective.col + 1;
     }
   }
   isValidMove(orientation, planet) {
-    let flag;
     switch (orientation) {
       case 'N':
-        flag = planet.isValidCoordinate(
+        return planet.isValidCoordinate(
           this.parentDirective.row + 1,
           this.parentDirective.col
         );
       case 'S':
-        flag = planet.isValidCoordinate(
+        return planet.isValidCoordinate(
           this.parentDirective.row - 1,
           this.parentDirective.col
         );
       case 'W':
-        flag = planet.isValidCoordinate(
+        return planet.isValidCoordinate(
           this.parentDirective.row,
           this.parentDirective.col - 1
         );
       case 'E':
-        flag = planet.isValidCoordinate(this.parentDirective.row, this.col + 1);
+        return planet.isValidCoordinate(this.parentDirective.row, this.col + 1);
     }
-    return flag;
   }
 }
 
