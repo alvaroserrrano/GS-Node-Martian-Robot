@@ -1,7 +1,7 @@
 let { Coordinate } = require('../model/Coordinate.js');
 
-describe('Planet height cannot be greater', function () {
-  it('Do not exceed maximum planet dimensions', function () {
+describe('Given some coordinates for the planet', function () {
+  it('Planet height cannot be greater than 50', function () {
     expect(function () {
       new Coordinate(4, 80);
     }).toThrow(new Error('Do not exceed maximum planet dimensions'));

@@ -29,6 +29,9 @@ class Planet {
   createScent(row, col) {
     this.getPosition(row, col).scent = true;
   }
+  hasScent(row, col) {
+    return this.getPosition(row, col).scent;
+  }
   showFootprints(horizontalMove, verticalMove, orientation, instruction) {
     let path = '';
   }

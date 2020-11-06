@@ -99,16 +99,10 @@ $ docker build -t aserranorivas/martian-robots .
 ### Run container
 
 ```
-$ docker run -p 49160:8080 -d  aserranorivas/martian-robots
+$ docker run -p 49160:8080 aserranorivas/martian-robots
 ```
 
 ### Test the app
-
-```
-curl -i localhost:49160
-```
-
-# Run Tests
 
 ```
 $ npm run test

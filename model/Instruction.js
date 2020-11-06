@@ -5,7 +5,7 @@ class InstructionFactory {
   constructor() {}
   static getDirective(directive, parentDirective) {
     if (directive == undefined) {
-      console.error('Invalid directive');
+      throw new Error('Invalid directive');
     }
     switch (directive) {
       case 'R':
@@ -26,7 +26,7 @@ class Instruction {
     this.parentDirective = parentDirective;
   }
   execute(planet) {
-    console.error('Execution not specified');
+    throw new Error('Execution not specified');
   }
 }
 
@@ -45,7 +45,7 @@ class MoveRightInstruction extends Instruction {
     } else if (this.parentDirective.orientation === 'W') {
       this.parentDirective.orientation = 'N';
     } else {
-      console.error('Invalid orientation');
+      throw new Error('Invalid orientation');
     }
     return { status: 'success' };
   }
@@ -66,7 +66,7 @@ class MoveLeftInstruction extends Instruction {
     } else if (this.parentDirective.orientation === 'E') {
       this.parentDirective.orientation = 'N';
     } else {
-      console.error('Invalid orientation');
+      throw new Error('Invalid orientation');
     }
 
     return { status: 'success' };

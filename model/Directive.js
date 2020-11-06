@@ -8,7 +8,7 @@ class Directive {
 
     // x y orientation
     if (initialPosition.length != 3) {
-      console.error('Invalid initial conditions');
+      throw new Error('Invalid initial conditions');
     }
 
     this.initialCol = parseInt(initialPosition[0]); //x
