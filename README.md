@@ -161,7 +161,7 @@ For each robot position/instruction in the input, the output should indicate the
 position and orientation of the robot. If a robot falls off the edge of the grid the word
 "LOST" should be printed after the position and orientation.
 
-````
+```
 
 Sample input
 5 3
@@ -222,8 +222,6 @@ Project Link: [https://github.com/alvaroserrrano/GS-MartianRobots](https://githu
 - [GitHub Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet)
 - [Img Shields](https://shields.io)
 - [Choose an Open Source License](https://choosealicense.com)
-- [GitHub Pages](https://pages.github.com)
-- [Font Awesome](https://fontawesome.com)
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
@@ -240,6 +238,5 @@ Project Link: [https://github.com/alvaroserrrano/GS-MartianRobots](https://githu
 [license-url]: https://github.com/alvaroserrrano/repo/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/alvaroserrano
-[product-screenshot]: images/screenshot.png
-```
-````
+
+
