@@ -1,7 +1,11 @@
 class Coordinate {
-  constructor(x, y) {
-    this.x = x;
-    this.y = y;
+  constructor(row, col) {
+    this.maxCoordinatePoint = 50;
+    if (row >= this.maxCoordinatePoint || col >= this.maxCoordinatePoint) {
+      console.error('Invalid point in planet surface');
+    }
+    this.row = row;
+    this.col = col;
     this.scent = false;
   }
 }
