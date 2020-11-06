@@ -108,6 +108,12 @@ $ docker run -p 49160:8080 -d  aserranorivas/martian-robots
 curl -i localhost:49160
 ```
 
+# Run Tests
+
+```
+$ npm run test
+```
+
 <!-- THE PROBLEM -->
 
 ## The problem

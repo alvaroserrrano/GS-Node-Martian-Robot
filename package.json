@@ -4,7 +4,7 @@
   "description": "Guidesmith node assessment",
   "main": "index.js",
   "scripts": {
-    "test": "test",
+    "test": "jasmine-node spec --verbose",
     "start": "node main.js"
   },
   "repository": {
@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/alvaroserrrano/GS-Node-Martian-Robot/issues"
   },
-  "homepage": "https://github.com/alvaroserrrano/GS-Node-Martian-Robot#readme"
+  "homepage": "https://github.com/alvaroserrrano/GS-Node-Martian-Robot#readme",
+  "dependencies": {
+    "jasmine-node": "^3.0.0"
+  }
 }
